@@ -57,11 +57,10 @@ ad_passwd jsmith@ad.example.com
 
 ## Building
 
+This image uses a `Rakefile` to generate the `Dockerfile` from `Dockerfile.erb` and `metadata.yaml` before building.
+
 ```bash
-docker build \
-  --build-arg IMPACKET_VERSION=0.13.0 \
-  -t bcit/changepasswd:0.13.0 \
-  -t bcit/changepasswd:latest .
+rake
 ```
 
 ## Image details
@@ -70,5 +69,5 @@ docker build \
 |---|---|
 | Base image | `python:3.12-alpine` |
 | Impacket version | `0.13.0` |
-| Runs as | non-root (`uid 1000`) |
+| Runs as | non-root (`app_user`, `uid 1000`) |
 | Included tools | `changepasswd.py` only |
