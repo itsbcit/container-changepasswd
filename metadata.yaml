@@ -1,10 +1,16 @@
 ---
-image_name: template_test
+image_name: changepasswd
 registries:
-  - url: bcit.io
+  - url: docker.io
+    org_name: bcit
 labels:
-  maintainer: "jesse@weisner.ca, github.com/deuterium"
+  maintainer: "github.com/ontkanin"
+  title: "changepasswd"
+  description: "Minimal impacket changepasswd.py for AD password changes"
+  version: "${IMPACKET_VERSION}"
+  source: "https://github.com/itsbcit/container-changepasswd"
 vars:
-  tini_version: '0.19.0'
-  de_version: '1.6'
-  dockerize_version: '0.7.0'
+  python_version: '3.12-alpine'
+  impacket_version: '0.13.0'
+  user_name: 'appuser'
+  user_uid: '1000'
