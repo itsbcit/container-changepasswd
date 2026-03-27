@@ -1,4 +1,4 @@
-FROM python:<%= image.vars['python_version'] %>
+FROM python:<%= image.vars['python_version'] %>-alpine
 
 ARG IMPACKET_VERSION=<%= image.vars['impacket_version'] %>
 

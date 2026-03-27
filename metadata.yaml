@@ -10,7 +10,7 @@ labels:
   version: "${IMPACKET_VERSION}"
   source: "https://github.com/itsbcit/container-changepasswd"
 vars:
-  python_version: '3.12-alpine'
+  python_version: '3.12'
   impacket_version: '0.13.0'
   user_name: 'appuser'
   user_uid: '1000'
