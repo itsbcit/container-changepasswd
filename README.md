@@ -67,7 +67,7 @@ rake
 
 | | |
 |---|---|
-| Base image | `python:3.12-alpine` |
-| Impacket version | `0.13.0` |
+| Base image | `python:3.14-alpine` |
+| Impacket version | `0.13.1` |
 | Runs as | non-root (`appuser`, `uid 1000`) |
 | Included tools | `changepasswd.py` only |

@@ -1,9 +1,9 @@
-FROM python:3.12-alpine
+FROM python:3.14-alpine
 
-ARG IMPACKET_VERSION=0.13.0
+ARG IMPACKET_VERSION=0.13.1
 
 LABEL maintainer="github.com/ontkanin"
-LABEL build_id="1774652332"
+LABEL build_id="1783027398"
 LABEL title="changepasswd"
 LABEL description="Minimal impacket changepasswd.py for AD password changes"
 LABEL version="${IMPACKET_VERSION}"
