@@ -81,6 +81,14 @@ This image uses a `Rakefile` to generate the `Dockerfile` from `Dockerfile.erb` 
 rake
 ```
 
+To build and publish a multi-platform image for AMD64 and ARM64 using Docker Buildx:
+
+```bash
+rake multiarch
+```
+
+This pushes all tags and registries configured in `metadata.yaml`. Set `PLATFORMS` to override the default platforms.
+
 ## Image details
 
 | | |
