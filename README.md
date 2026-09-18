@@ -45,7 +45,7 @@ ad_passwd() {
     echo "Usage: ad_passwd USERNAME@DOMAIN"
     return 1
   fi
-  docker run -it --rm bcit/changepasswd "${1}"
+  docker run -it --rm bcit/changepasswd -protocol kpasswd "${1}"
 }
 ```
 
@@ -54,6 +54,24 @@ Then just run:
 ```bash
 ad_passwd jsmith@ad.example.com
 ```
+
+### Windows Server 2025 compatibility
+
+Password changes against Windows Server 2025 may fail unless `-protocol kpasswd` is used, sometimes with the misleading error:
+
+```text
+Target user is not allowed to change their own password
+```
+
+To use the Kerberos password-change protocol directly:
+
+```bash
+docker run -it --rm bcit/changepasswd -protocol kpasswd username@domain
+```
+
+The `ad_passwd` helper explicitly uses the Kerberos `kpasswd` protocol for compatibility with Windows Server 2025. It also works with earlier Active Directory domain controllers and requires TCP or UDP port 464 between the client and domain controller.
+
+If port 464 is unavailable, omit `-protocol kpasswd` to use the container's default protocol. This fallback may fail against Windows Server 2025.
 
 ## Building
 
